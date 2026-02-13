@@ -1,0 +1,11 @@
+# Compiled binaries
+*.out
+*.exe
+*.o
+*.a
+
+# Build folders
+build/
+
+# Temporary files
+*.log
