@@ -37,7 +37,6 @@ int main(){
     listen(sockfd, 5);
     std::cout << "Listening...\n";
 
-    // 5️⃣ Accept
     struct sockaddr_un cli;
     socklen_t len;
 

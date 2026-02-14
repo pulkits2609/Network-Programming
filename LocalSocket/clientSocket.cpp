@@ -8,7 +8,7 @@
 #include<unistd.h> //for write and read system call
 int main(){
     //initialize the buffer
-    char rbuf[20];
+    char rbuf[30];
     //initialize socket descriptor before creating socket
     int sockfd = -1;
     sockfd = socket(AF_UNIX,SOCK_STREAM,0); //AF_UNIX is the Local Socket Family
@@ -22,7 +22,7 @@ int main(){
     //after socket has been created we need to connect it to the server using its address
     struct sockaddr_un serv; //initialize socket address
     serv.sun_family = AF_UNIX; //specify the socket addres family
-    strcpy(serv.sun_path,"./LocalSock"); //provide with the server socket file path
+    strcpy(serv.sun_path,"./LocalSocketFile"); //provide with the server socket file path
     
     int ret=-1;
     ret = connect(sockfd,(struct sockaddr *)&serv,sizeof(serv));
