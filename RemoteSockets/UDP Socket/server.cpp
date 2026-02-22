@@ -41,8 +41,17 @@ int main(){
     std::cout<<"Message Received From Address : "<<inet_ntoa(ClientAddress.sin_addr)<<" PORT : "<<ntohs(ClientAddress.sin_port)<<"\n";
     std::cout<<"CLIENT ::::: ";
     std::cout.write(Buffer,ret)<<"\n"; //only print the number of bytes that have been returned
-
+    
     //sending message logic will come here
+    char WriteBuffer[]="Hello Client !!";
+    CliLen = sizeof(ClientAddress); //this will send the message to the client who sent the message.
+    ret=sendto(socketfd,&WriteBuffer,sizeof(WriteBuffer),0,(struct sockaddr *)&ClientAddress,CliLen);
+    if(ret < 0){
+        perror("Error Sending Message to Client");
+        close(socketfd);
+        return -1;
+    }
+    std::cout<<"Sent Message to client Successfully\n";
     close(socketfd);
     return 0;
 
