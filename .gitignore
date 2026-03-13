@@ -1,11 +1,17 @@
-# Compiled binaries
+# executables
 *.out
 *.exe
-*.o
-*.a
+client
+server
+echoClient
+echoServer
+race
+threadTest
+producerConsumer
+firstThread
+testFork
+concurrentServer
 
-# Build folders
+# build folders
 build/
-
-# Temporary files
-*.log
+bin/
